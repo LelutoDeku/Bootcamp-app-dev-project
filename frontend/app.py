@@ -9,9 +9,8 @@ from pymongo import MongoClient, DESCENDING
 
 app = Flask(__name__, static_url_path='')
 
-YOLO_URL = 'http://localhost:8081'
-MONGO_URL = 'mongodb://localhost:27017'
-
+# YOLO_URL = 'http://yolo5:8081'
+# MONGO_URL = 'mongodb://localhost:27017'
 
 @app.route('/', methods=['POST'])
 def upload_file():
@@ -75,6 +74,9 @@ if __name__ == "__main__":
     # client = MongoClient(MONGO_URL)
 
     # app.run(host='0.0.0.0', port=8082, debug=True)
+
+    # We can use docker-compose service name as well (here it's 'yolo5') with port 8081
+    YOLO_URL = 'http://yolo5:8081'
 
     logger.info(f'Initializing MongoDB connection')
 

@@ -6,7 +6,7 @@ networks:
 services:
 
   frontend:
-    image: object-detection-frontend:latest
+    image: object-detection-frontend:hammad
     container_name: frontend
     ports:
       - "8082:8082"
@@ -21,7 +21,7 @@ services:
       - object-detection
 
   yolo5:
-    image: object-detection-yolo5:latest
+    image: object-detection-yolo5:hammad
     container_name: yolo5
     ports:
       - 8081:8081
@@ -29,7 +29,7 @@ services:
       - object-detection    
 
   polybot:
-    image: object-detection-polybot:latest
+    image: object-detection-polybot:hammad
     container_name: polybot
     depends_on:
       - yolo5
